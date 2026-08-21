@@ -1,0 +1,20 @@
+{
+  "name": "timbre",
+  "version": "0.1.0",
+  "type": "extension",
+  "description": "Writing voice calibration - mirror, generate, and grow your craft",
+  "entry": "src/mcp_timbre/server.py",
+  "scope": "project",
+  "token_cost": 1800,
+  "keywords": ["writing", "voice", "calibration", "craft", "mirror"],
+  "author": {
+    "name": "Dakota Fabro",
+    "github": "dakotafabro"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/dakotafabro/timbre",
+  "agents": ["goose"],
+  "dependencies": [],
+  "conflicts": [],
+  "peers": ["learning-mode"]
+}
