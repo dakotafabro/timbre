@@ -158,20 +158,69 @@ extensions:
 
 ---
 
-## Commands
+## Usage
 
-| Command | Mode | Description |
+Timbre runs inside a Goose (or any MCP-compatible) session. You interact with it through natural language in your chat. The agent calls the tools on your behalf based on what you say.
+
+### Getting Started
+
+Say any of these to your agent:
+
+- **"Let's calibrate my writing voice"** - Starts the calibration flow. The agent will ask you to provide real writing samples across different registers.
+- **"Show me my voice profile"** - Displays your current profile with patterns across registers.
+- **"I want to edit my profile"** - Opens your voice-profile.md for manual adjustment.
+
+### Mirror Mode (Reflection)
+
+- **"How does this sound?"** + paste your writing - The agent reflects on how it compares to your established voice. No corrections, just observations.
+- **"What's my pattern for emails?"** - Before you write, the agent surfaces your typical patterns for that register.
+- **"What's my pattern for Slack messages?"** - Same, for casual communication.
+- **"Am I drifting?"** + paste your writing - The agent flags where you've deviated from your baseline. Just noticing.
+
+### Writing Sessions
+
+- **"I'm writing an email, craft mode"** - Starts a session with generation disabled. Mirror only.
+- **"I need to write a status update, throughput mode"** - Starts a session where you can provide substance and get a draft in your voice.
+- **"I'm working on my blog voice, learning mode"** - Starts a session with scaffolding. The agent shows patterns, suggests what the context calls for, and lets you try.
+
+### Generation (Throughput Mode Only)
+
+- **"Here are my bullet points, draft this as an email"** - You provide the substance, the agent generates in your voice.
+- **"Turn these notes into a Slack message"** - Same pattern: your thinking in, polished writing out.
+- **"I wrote this rough draft, clean it up in my voice"** - Agent refines while matching your profile.
+
+### Sovereignty & Trajectory
+
+- **"Show me my trajectory"** - Generation ratio, mode distribution, stale registers, alerts.
+- **"Am I generating too much?"** - Same as trajectory, focused on the ratio.
+- **"Do any registers need recalibration?"** - Checks staleness and prompts for fresh samples on real work.
+
+### Learning Mode
+
+- **"Challenge me"** - Get a craft challenge for your current growth edge.
+- **"Help me write more concisely"** - Scaffolding for a specific dimension.
+- **"I want to expand into narrative writing"** - Register expansion with scaffolding.
+
+---
+
+## Tool Reference
+
+Under the hood, these are the MCP tools the agent calls:
+
+| Tool | Mode | Description |
 |---|---|---|
-| `calibrate` | - | Start or continue voice calibration |
-| `profile` | - | View your current voice profile |
-| `edit-profile` | - | Open profile for manual adjustment |
-| `how-does-this-sound` | Mirror | Get reflection on a piece of writing |
-| `what-is-my-pattern` | Mirror | Surface patterns for a given context |
-| `where-am-i-drifting` | Mirror | Flag deviations from established voice |
-| `draft [mode]` | All | Start a writing session in the declared mode |
-| `generate` | Throughput | Generate a draft from your provided substance |
-| `challenge` | Learning | Get a craft challenge for your current growth edge |
-| `trajectory` | - | See how your voice has evolved over time |
+| `timbre_calibrate` | - | Start or continue voice calibration |
+| `timbre_submit_sample` | - | Submit a writing sample for a register |
+| `timbre_update_profile` | - | Save/update the voice profile |
+| `timbre_profile` | - | View current voice profile |
+| `timbre_how_does_this_sound` | Mirror | Reflect on a piece of writing |
+| `timbre_what_is_my_pattern` | Mirror | Surface patterns for a given context |
+| `timbre_where_am_i_drifting` | Mirror | Flag deviations from established voice |
+| `timbre_draft` | All | Start a writing session in a specific mode |
+| `timbre_generate` | Throughput | Generate a draft from provided substance |
+| `timbre_log_written` | - | Log that the user wrote something themselves |
+| `timbre_trajectory` | - | Show generation ratio and evolution |
+| `timbre_recalibration_check` | - | Check if registers need fresh samples |
 
 ---
 
