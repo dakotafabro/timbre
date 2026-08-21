@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-timbre"
+version = "0.1.0"
+description = "Writing voice calibration - mirror, generate, and grow your craft"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+    { name = "Dakota Fabro", email = "dakota@eleventhhouseresearch.org" }
+]
+dependencies = [
+    "fastmcp>=2.13.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+mcp_timbre = "mcp_timbre.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_timbre"]
