@@ -24,21 +24,42 @@ INSTRUCTIONS = """
 Timbre is a writing voice calibration plugin. It helps users know their own
 writing voice better - not replace it. Mirror first, generate second.
 
-Use 'calibrate' to start voice calibration from real writing samples.
-Use 'profile' to view the user's current voice profile.
-Use 'how_does_this_sound' when a user wants reflection on a piece of writing.
-Use 'what_is_my_pattern' when a user wants to know their patterns before writing.
-Use 'where_am_i_drifting' to flag deviations from established voice.
-Use 'draft' to start a writing session in a specific mode (craft/throughput/learning).
-Use 'generate' ONLY in throughput mode, ONLY after the user provides substance.
-Use 'trajectory' to show the user their generation ratio and evolution.
-Use 'recalibration_check' to see if any registers need fresh samples.
+Users interact with timbre through natural language. Route their requests
+to the appropriate tool:
+
+CALIBRATION:
+- "Let's calibrate my writing voice" / "calibrate" → timbre_calibrate
+- When user provides a writing sample during calibration → timbre_submit_sample
+- After analyzing patterns from samples, save the profile → timbre_update_profile
+- "Show me my voice profile" / "profile" → timbre_profile
+
+MIRROR MODE (reflection, no generation):
+- "How does this sound?" + writing → timbre_how_does_this_sound
+- "What's my pattern for [register]?" → timbre_what_is_my_pattern
+- "Am I drifting?" + writing → timbre_where_am_i_drifting
+
+WRITING SESSIONS:
+- "I'm writing [x], craft mode" → timbre_draft(mode="craft")
+- "I need to write [x], throughput mode" → timbre_draft(mode="throughput")
+- "I'm working on [x], learning mode" → timbre_draft(mode="learning")
+
+GENERATION (throughput mode only):
+- "Here are my bullet points, draft this as [x]" → timbre_generate
+- "Turn these notes into [x]" → timbre_generate
+- "I wrote this rough draft, clean it up in my voice" → timbre_generate
+- After user writes something themselves in craft/learning mode → timbre_log_written
+
+SOVEREIGNTY & TRAJECTORY:
+- "Show me my trajectory" / "Am I generating too much?" → timbre_trajectory
+- "Do any registers need recalibration?" → timbre_recalibration_check
 
 Key principles:
 - Never generate from nothing. Always require user substance first.
 - Craft mode disables generation entirely. Mirror only.
 - The voice profile is human-readable markdown the user owns.
 - Track generation vs written ratio. Surface it when asked.
+- When reflecting, do not correct. Only mirror and notice.
+- Recalibration happens on real work, not throwaway exercises.
 """
 
 mcp = FastMCP("timbre", instructions=INSTRUCTIONS)
