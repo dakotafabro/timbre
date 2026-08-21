@@ -1,6 +1,6 @@
 # timbre
 
-A writing voice calibration plugin that helps you know your own voice better - not replace it.
+A writing voice calibration extension that helps you know your own voice better - not replace it.
 
 ---
 
@@ -8,35 +8,35 @@ A writing voice calibration plugin that helps you know your own voice better - n
 
 Most AI writing tools optimize for throughput. You describe what you want, the tool generates it, you edit. The implicit promise is speed: less time writing, more time doing other things.
 
-This plugin takes a different position. Writing is not an obstacle between you and your ideas. Writing is how you discover, refine, and express your ideas. Your voice - the specific way you construct sentences, open emails, close arguments, signal warmth or authority or curiosity - is not a style sheet to be applied. It's a living relationship between you and language that develops through practice.
+Timbre takes a different position. Writing is not an obstacle between you and your ideas. Writing is how you discover, refine, and express your ideas. Your voice - the specific way you construct sentences, open emails, close arguments, signal warmth or authority or curiosity - is not a style sheet to be applied. It's a living relationship between you and language that develops through practice.
 
-The problem this plugin solves is not "writing takes too long." The problem is: most people don't know their own voice well enough to wield it intentionally. They write differently in different contexts without noticing. They drift from their natural patterns under pressure. They have difficulty articulating what makes their writing theirs.
+The problem timbre solves is not "writing takes too long." The problem is: most people don't know their own voice well enough to wield it intentionally. They write differently in different contexts without noticing. They drift from their natural patterns under pressure. They have difficulty articulating what makes their writing theirs.
 
-This plugin is a mirror first and a tool second. Its primary job is to show you who you are as a writer. Its secondary job - available when you consciously choose it - is to help you produce writing that sounds more like you across the different contexts within which you work.
+Timbre is a mirror first and a tool second. Its primary job is to show you who you are as a writer. Its secondary job - available when you consciously choose it - is to help you produce writing that sounds more like you across the different contexts within which you work.
 
-The success metric is not "how much writing did we generate for the user." It's "does the user know their own voice better after six months of using this plugin than they did prior?"
+The success metric is not "how much writing did we generate for the user." It's "does the user know their own voice better after six months of using timbre than they did prior?"
 
 ---
 
 ## The Honest Tradeoffs
 
-Building a tool that touches someone's writing voice carries real risks. This plugin was designed in direct conversation with the Ontological Footprint Framework by Dakota Fabro, which diagnoses how technology reshapes human capability at scale. Here's what we're watching for and how the design addresses it:
+Building a tool that touches someone's writing voice carries real risks. Timbre was designed in direct conversation with the Ontological Footprint Framework by Dakota Fabro, which diagnoses how technology reshapes human capability at scale. Here's what we're watching for and how the design addresses it:
 
-**Behavioral Substitution.** If the plugin generates writing for you by default, the generative struggle - the place where voice actually develops - gets bypassed. Over time, you lose familiarity with your own unmediated expression.
+**Behavioral Substitution.** If timbre generates writing for you by default, the generative struggle - the place where voice actually develops - gets bypassed. Over time, you lose familiarity with your own unmediated expression.
 
-*Design response:* Generation is never the default mode. The primary mode is reflection. Generation requires you to provide substance first (outline, bullets, rough draft) and to consciously select throughput mode. The plugin never generates from nothing.
+*Design response:* Generation is never the default mode. The primary mode is reflection. Generation requires you to provide substance first (outline, bullets, rough draft) and to consciously select throughput mode. Timbre never generates from nothing.
 
 **Default Installation.** The risk that encountering a blank page triggers "let me get an output" instead of "let me think about what I want to say."
 
-*Design response:* Craft mode disables generation entirely. The plugin only reflects. You choose your mode before writing, which means you're making a conscious decision about your relationship to the work.
+*Design response:* Craft mode disables generation entirely. Timbre only reflects. You choose your mode before writing, which means you're making a conscious decision about your relationship to the work.
 
-**Exit Cost Escalation.** If you rely on the plugin long enough, your unassisted writing might feel unfamiliar - not because it's worse, but because you've lost contact with it.
+**Exit Cost Escalation.** If you rely on timbre long enough, your unassisted writing might feel unfamiliar - not because it's worse, but because you've lost contact with it.
 
-*Design response:* The plugin tracks your generation ratio over time. If it's climbing, it tells you. It periodically asks: "Could you write effectively without this tomorrow?" Your voice profile is a readable document you own and can apply manually. Nothing is locked to the tool.
+*Design response:* Timbre tracks your generation ratio over time. If it's climbing, it tells you. It periodically asks: "Could you write effectively without this tomorrow?" Your voice profile is a readable document you own and can apply manually. Nothing is locked to the tool.
 
-**Intermediation.** The plugin sits between you and your expression. Every piece of writing passes through an intermediary that shapes it according to prior calibration.
+**Intermediation.** Timbre sits between you and your expression. Every piece of writing passes through an intermediary that shapes it according to prior calibration.
 
-*Design response:* Mirror mode doesn't shape anything. It observes and reflects. In throughput mode, you've already done the thinking - the plugin handles surface expression while you retain the substance. The cognitive work stays with you.
+*Design response:* Mirror mode doesn't shape anything. It observes and reflects. In throughput mode, you've already done the thinking - timbre handles surface expression while you retain the substance. The cognitive work stays with you.
 
 ---
 
@@ -44,7 +44,7 @@ Building a tool that touches someone's writing voice carries real risks. This pl
 
 ### Calibration
 
-You write. Not exercises - real writing you'd produce anyway. The plugin observes across registers (email, Slack, technical docs, narrative, persuasive) and extracts patterns:
+You write. Not exercises - real writing you'd produce anyway. Timbre observes across registers (email, Slack, technical docs, narrative, persuasive) and extracts patterns:
 
 - Sentence length and rhythm
 - How you open and close communications
@@ -57,38 +57,38 @@ The output is a `voice-profile.md` file. Human-readable. Editable. Yours. Not a 
 
 ### Three Modes
 
-| Mode | When to use it | What the plugin does |
+| Mode | When to use it | What timbre does |
 |---|---|---|
 | **Craft** | Creative writing, personal correspondence, design docs, anything you want to own deeply | Mirror only. Reflects patterns, flags drift, never generates. |
 | **Throughput** | Routine emails, status updates, Slack replies where voice consistency matters | Generates a draft in your voice from your substance (outline, bullets, rough draft). You edit. |
 | **Learning** | When you're stretching into a new register or actively improving your craft | Scaffolding. Shows your patterns, suggests what the context calls for, lets you try it yourself. |
 
-You choose the mode. The plugin never defaults to generation.
+You choose the mode. Timbre never defaults to generation.
 
 ### The Mirror (Primary Function)
 
-- **"How does this sound?"** - You write something, the plugin reflects: "This reads more formal than your typical professional register. Shorter sentences than usual. Missing your typical warm close."
-- **"What's my pattern here?"** - Before writing, the plugin surfaces relevant patterns: "In emails to external collaborators, you tend to open with genuine enthusiasm, keep the body conversational, and close with gratitude toward the person."
-- **"Where am I drifting?"** - The plugin flags significant deviations from your established voice. No correction. Just noticing.
+- **"How does this sound?"** - You write something, timbre reflects: "This reads more formal than your typical professional register. Shorter sentences than usual. Missing your typical warm close."
+- **"What's my pattern here?"** - Before writing, timbre surfaces relevant patterns: "In emails to external collaborators, you tend to open with genuine enthusiasm, keep the body conversational, and close with gratitude toward the person."
+- **"Where am I drifting?"** - Timbre flags significant deviations from your established voice. No correction. Just noticing.
 
 ### Recalibration on Real Work
 
-Voice evolves. The plugin tracks when a register was last calibrated and prompts you when a fresh sample is needed:
+Voice evolves. Timbre tracks when a register was last calibrated and prompts you when a fresh sample is needed:
 
 "A fresh writing sample for professional email is needed. The next professional email you write will be used to calibrate this register."
 
-You opt in. You write your real email with intentionality - aware that this one is being observed, aware that this is a moment to show how you're writing now. The email gets sent. It serves its actual purpose. The plugin updates your profile from real work, not throwaway exercises.
+You opt in. You write your real email with intentionality - aware that this one is being observed, aware that this is a moment to show how you're writing now. The email gets sent. It serves its actual purpose. Timbre updates your profile from real work, not throwaway exercises.
 
-This creates a micro-moment of craft every time it fires. The awareness itself - "this one counts" - is the plugin doing its job.
+This creates a micro-moment of craft every time it fires. The awareness itself - "this one counts" - is timbre doing its job.
 
 ### Sovereignty Safeguards
 
-The plugin monitors its own impact on you:
+Timbre monitors its own impact on you:
 
 - **Generation ratio tracking:** What percentage of your writing is generated vs. written by you? Is that ratio moving in the direction you want?
-- **Atrophy detection:** If you're generating in registers that used to be craft mode, the plugin surfaces it. "You used to write your own team updates. You've generated the last 8. Want to keep delegating or write the next one yourself?"
-- **Drift alerts:** If you're defaulting to throughput for everything, the plugin flags it.
-- **Evolution tracking:** How has your voice changed since you started? Are your sentences getting tighter? Is your confidence growing? The plugin shows you your own trajectory.
+- **Atrophy detection:** If you're generating in registers that used to be craft mode, timbre surfaces it. "You used to write your own team updates. You've generated the last 8. Want to keep delegating or write the next one yourself?"
+- **Drift alerts:** If you're defaulting to throughput for everything, timbre flags it.
+- **Evolution tracking:** How has your voice changed since you started? Are your sentences getting tighter? Is your confidence growing? Timbre shows you your own trajectory.
 
 ---
 
@@ -115,21 +115,21 @@ Writers who want to:
 - Develop their writing practice with a tool that builds capability rather than replacing it
 - Reduce rework on routine writing so they can share ideas more quickly - while keeping the creative work for themselves
 
-Writers have their own style and craft. This plugin respects that. It's here if you want it. The goal is to make you a better, more self-aware writer - not to write for you.
+Writers have their own style and craft. Timbre respects that. It's here if you want it. The goal is to make you a better, more self-aware writer - not to write for you.
 
 ---
 
 ## What Success Looks Like
 
-After using this plugin for three to six months:
+After using timbre for three to six months:
 
 - You can articulate your own voice patterns without consulting the profile
 - Your unassisted writing is more confident and consistent than before
-- Your generation ratio is trending down (you need the plugin less, not more)
-- You notice your own drift in real time, without the plugin flagging it
+- Your generation ratio is trending down (you need timbre less, not more)
+- You notice your own drift in real time, without timbre flagging it
 - You've expanded into registers you weren't comfortable in before
 
-If all of that is true, the plugin did its job. It scaffolded and stepped back.
+If all of that is true, timbre did its job. It scaffolded and stepped back.
 
 ---
 
@@ -235,10 +235,10 @@ Under the hood, these are the MCP tools the agent calls:
 
 ## Related Work
 
-This plugin was designed in conversation with:
+Timbre was designed in conversation with:
 
-- **The Ontological Footprint Framework** - A diagnostic for understanding how technology reshapes human capability at scale. The plugin's sovereignty safeguards are a direct application of Restorative Scale design principles.
-- **The Three Dimensions of AI Collaboration Maturity** - The plugin's mode system maps to the DOK and ADT dimensions: craft mode keeps you at high cognitive engagement, throughput mode is conscious delegation, learning mode builds capability.
+- **The Ontological Footprint Framework** - A diagnostic for understanding how technology reshapes human capability at scale. Timbre's sovereignty safeguards are a direct application of Restorative Scale design principles.
+- **The Three Dimensions of AI Collaboration Maturity** - Timbre's mode system maps to the DOK and ADT dimensions: craft mode keeps you at high cognitive engagement, throughput mode is conscious delegation, learning mode builds capability.
 - **The Orchestra Model** - Mirror mode is the maestro listening. Throughput mode is the ensemble executing the maestro's vision. The user never cedes the creative seat.
 
 ---
