@@ -94,7 +94,7 @@ Timbre monitors its own impact on you:
 
 ## Pairing with Learning Mode
 
-Timbre on its own helps you know your voice and maintain consistency. For writers who want to actively develop their craft - not just preserve it but push it forward - timbre pairs with [learning-mode](https://github.com/block/goose) to create a deeper practice.
+Timbre on its own helps you know your voice and maintain consistency. For writers who want to actively develop their craft - not just preserve it but push it forward - timbre pairs with [learning-mode](https://github.com/dakotafabro/learning-mode) to create a deeper practice.
 
 When both are installed, learning-mode shifts the agent from "do it for you" to "do it with you." Applied to writing, this means:
 

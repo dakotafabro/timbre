@@ -1,6 +1,6 @@
 {
   "name": "timbre",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "extension",
   "description": "Writing voice calibration - mirror, generate, and grow your craft",
   "entry": "src/mcp_timbre/server.py",

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcp-timbre"
-version = "0.1.0"
+version = "0.1.1"
 description = "Writing voice calibration - mirror, generate, and grow your craft"
 requires-python = ">=3.10"
 license = "Apache-2.0"
